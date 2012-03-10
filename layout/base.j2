@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ media_url('css/style.css') }}" type="text/css"/>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
+        <title>{{ site_title }} | {% block title %}{{ resource.meta.title }}{% endblock %}</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <header class="info">
+            <h2>Geoff Wyatt</h2>
+            <p>About</p>
+            <p>Thoughts</p>
+            <a href="http://www.linkedin.com/in/geoffwyatt" target="_blank"><img class="button" src="{{ media_url('img/linkedin.png') }}" alt="LinkedIn"></a>
+            <a href="http://twitter.com/#!/geoffwyatt" target="_blank"><img class="button" src="{{ media_url('img/twitter.png') }}" alt="Twitter"></a>
+        </header>
+        <div class="content">
+            {% filter markdown|typogrify %}
+            {% block content %}
+            {% endblock content %}
+            {% endfilter %}
+        </div>
+        {% include "analytics.j2" %}
+     </body>
+</html>

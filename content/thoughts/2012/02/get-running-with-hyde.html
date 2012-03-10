@@ -1,0 +1,114 @@
+---
+title: Get Running with Hyde
+extends: base.j2
+created: !!timestamp '2012-02-14 22:30:00'
+---
+{% block content %}
+
+# Get Running With Hyde
+
+As a bit of a pet project, I decided late last year to start up a blog. I 
+planned to capture my rambling in a written form, as at any given time I have a
+number of ideas floating around and felt it would be good to document them.
+
+Of course being the person I am, I felt I could use this as an opportunity to 
+learn something new.  With that in mind I decided to put together my own 
+platform, and ended up deciding on [Hyde](http://Hyde.github.com/ "Hyde"). 
+
+## Why Hyde?
+
+The first decision was decide on a platform.  I had been in the process of
+learning [Python](http://www.python.org/) for about a month, and was looking 
+for something that was written in the language. I also knew there were (and 
+still are!) limits to what I knew, so something simple to manage would be best.
+
+After a bunch of research, I settled on [Hyde](http://Hyde.github.com/ "Hyde").
+ Hyde is a static site generator. Essentially it allows you to define templates
+, and generate static, flat, html files based on them. Utilizing [Markdown](http://daringfireball.net/projects/markdown/ "Markdown")
+, you can write content in plain-text, and Hyde will generate a full site based
+on your defined templates.
+
+## First Steps
+
+The first thing I did was grab the [Hyde source.](http://Hyde.github.com/ "Hyde
+") The easiest way to do this is using [pip](http://pypi.python.org/pypi/pip 
+"Pip"). Once pip is installed, it is as easy as running `pip install Hyde` from
+within your terminal. This will install Hyde, along with all of its
+dependencies if you have not installed them already.
+
+From here, I created a new folder for my site and set up a default site. To do 
+this I simply ran `Hyde create -l starter` to set up a default site based on 
+[Merlin Rebrovic's Starter Kit](http://merlin.rebrovic.net/Hyde-starter-kit/about.html). 
+This gave me a good skeleton to begin the development of my own site.
+
+## Developing Templates
+
+Templates for Hyde  are created using the [Jinja2](http://jinja.pocoo.org/docs/) templating language, which is heavily influenced
+by the Django templating language.  The Jinja2 website has some excellent
+ documentation, and I made great use of it when putting together this site.
+ 
+Using the starting point provided by my skeleton, I began to hack away at my 
+own site. The templates now are still very bloated, but seem to be working for 
+the most part. There is a ton of room for improvement, and I'll be tweaking 
+things as time progresses.
+
+Jinja2 has some great and powerful features, one of which is macros. Macros can
+easily be used to help automate the generation of your site. For example, the 
+following code generates the listing of all blog posts I have written:
+
+    {% raw %}
+    {% for res in site.content.walk_resources_sorted_by_time() %}
+        {% if res.meta.listable %}
+            <tr>
+                <td>
+                <a href="{{ res.full_url }}">{{ res.meta.title|capitalize }}</a> 
+                <span style="float:right">{{ res.meta.created.strftime('%d %b %Y') }}</span>
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    {% endraw %}
+
+There is great [Jinja2 template documentation](http://jinja.pocoo.org/docs/templates/#)
+on the Jinja website. I'd urge you to take a read through and just play around 
+with it. I learned a ton, and broke a ton, of stuff while trying to get this 
+all running.
+
+## All the Pretty Stuff
+
+I am by no means a designer.  That is why I am using 
+[Bootstrap](http://twitter.github.com/bootstrap/ "Bootstrap")
+ to handle the design of the site. Bootstrap is a simplified CSS framework designed
+to help you get up and running quickly. I've made a few tweaks, but for the most
+ part I am running it stock. Currently I am running v1.4. Version 2 was just
+ released, and I'll be moving over to it shortly.
+ 
+## Go Live!
+
+Once I had everything set up and running all that was left was to deploy. For 
+hosting I am using [Webfaction](http://www.webfaction.com "Webfaction"). So far
+I have nothing but good things to say about their service. I didn't require a 
+full-fledge VPS, however having shell access was a big thing for me.
+
+I am using Apache as my web server. As of now it is configured in the most 
+basic manner. I plan to get it rewriting links (hiding the ugly .html in the 
+address bar) in the future.
+
+## Resources
+
+Now the most important bit. There is no way I could have done this without all
+ of the great resources out there on the web. Some of the resources I made use 
+ of were:
+ 
+* [Hyde Source](https://github.com/Hyde/Hyde "Hyde Source")
+* [Hyde Bootstrap](https://github.com/auzigog/Hyde-bootstrap "Hyde Bootstrap")
+* [Hyde Powered Sites](https://github.com/Hyde/Hyde/wiki/Hyde-Powered "Hyde Powered")
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/ "Bootstrap")
+* [Steve Losh](http://www.stevelosh.com "Steve Losh")
+
+I'm sure I am missing a ton of information in this post, however I hope it gives
+an idea of what is required to get a Hyde blog up and running. I'm still learning
+how it all works, and you should see a number of changes as time goes on. If 
+you want any more information on what went into this please contact me!
+
+{% endblock content %}

@@ -1,0 +1,90 @@
+
+/* Main Layout Content */
+body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#000));
+    background: -moz-linear-gradient(top,  #ccc,  #000);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+}
+
+header.info{
+    position: fixed;
+    padding: 10px;
+    width: 200px;
+    left: 10px;
+    top: 10px;
+    text-align:center;
+    z-index: 1000;
+    padding-top: 25px;
+    background-color:white;
+    border-radius: 10px;
+}    
+
+ul.info{
+    text-align:center;
+}
+
+.content{
+    padding:10px;
+    padding-top: 25px;
+    margin-top:10px;
+    margin-left: 230px;
+    width: 650px;
+    margin-bottom: 50px;
+    background-color:white;
+    border-radius: 10px;
+}
+
+
+img.button:hover{
+    border-radius: 32px;
+    box-shadow:0 0px 7px #000000;
+    -webkit-box-shadow:0 0px 15px #000000;
+    -moz-box-shadow:0 0px 7px #000000;
+}
+
+/*Typography*/
+::selection {
+    background: #FF3D7F;
+}
+::-moz-selection {
+    background: #FF3D7F;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 45px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 25px;
+    line-height: 30px;
+}
+
+h4, h5, h6 {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+code, pre {
+  padding: 0 3px 2px;
+  font-family: Monaco, Andale Mono, Courier New, monospace;
+  font-size: 14px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+code {
+  background-color: #fee9cc;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 1px 3px;
+

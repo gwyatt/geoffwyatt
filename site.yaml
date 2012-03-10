@@ -1,0 +1,36 @@
+mode: development # Use "hyde publish -c prod.yaml to have this automatically switch to production
+media_root: media # Relative path from content folder.
+media_url: /media # URL where the media files are served from.
+plugins:
+    - hyde.ext.plugins.meta.MetaPlugin
+    - hyde.ext.plugins.auto_extend.AutoExtendPlugin
+    - hyde.ext.plugins.sorter.SorterPlugin
+    - hyde.ext.plugins.tagger.TaggerPlugin
+    - hyde.ext.plugins.syntext.SyntextPlugin
+    - hyde.ext.plugins.textlinks.TextlinksPlugin
+context:
+    data:
+        site_title: Geoff Wyatt
+        author:
+            name: Geoff Wyatt
+            url: "http://www.geoffwyatt.ca"
+        google_analytics_id: UA-28364866-1
+        home_url: index.html
+        menu:
+            - title: Home
+              url: /index.html
+            - title: About
+              url: /about.html
+            - title: Thoughts
+              url: /thoughts.html
+sorter:
+    name:
+        attr: name
+        filters:
+            source_file.kind: html
+    time:
+        attr:
+            - meta.created
+        reverse: true
+        filters:
+            source.kind: html

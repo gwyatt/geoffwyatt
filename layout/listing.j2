@@ -1,0 +1,16 @@
+{% extends "base.j2" %}
+
+{% block content %}
+<table class="bordered-table zebra-striped">
+    <tbody>
+    {% for res in site.content.walk_resources_sorted_by_time() %}
+    {% if res.meta.listable %}
+    <tr>
+        <td><a href="{{ res.full_url }}">{{ res.meta.title|title }}</a> <span style="float:right">{{ res.meta.created.strftime('%d %b %Y') }}</span></td>
+    </tr>
+    {% endif %}     
+    {% endfor %}
+    </tbody>                
+</table>
+{% endblock content %}
+{{ super() }}

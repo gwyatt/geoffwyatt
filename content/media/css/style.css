@@ -1,56 +1,68 @@
 
 /* Main Layout Content */
 body {
-    background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#000));
-    background: -moz-linear-gradient(top,  #ccc,  #000);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nobile', serif;
     font-weight: normal;
     font-size: 18px;
     line-height: 29px;
+
+}
+
+.wrap {
+    border-style: solid;
+    border-width: 1px;
+    -webkit-box-shadow:0 0px 10px 3px #000000;
+    -moz-box-shadow:0 0px 10px 3px #000000;
+    box-shadow: 0px 0px 10px 3px #000000;
+
+}
+.content{
+    height: 100%;
+    padding:10px;
+    padding-top: 25px;
+    margin-left: 230px;
+    width: 650px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 header.info{
-    position: fixed;
-    padding: 10px;
+    position:fixed;
+    top: 8px;
+    bottom: 8px;
     width: 200px;
-    left: 10px;
-    top: 10px;
     text-align:center;
     z-index: 1000;
-    padding-top: 25px;
-    background-color:white;
-    border-radius: 10px;
-}    
-
-ul.info{
-    text-align:center;
+    background-color: black;
+    color: white;
 }
 
-.content{
-    padding:10px;
-    padding-top: 25px;
-    margin-top:10px;
-    margin-left: 230px;
-    width: 650px;
-    margin-bottom: 50px;
-    background-color:white;
-    border-radius: 10px;
-}
-
-
-img.button:hover{
+img.social:hover{
     border-radius: 32px;
-    box-shadow:0 0px 7px #000000;
-    -webkit-box-shadow:0 0px 15px #000000;
-    -moz-box-shadow:0 0px 7px #000000;
+    outline-color:#FC354C;
+    outline-width: 500px;
+    box-shadow: 0px 0px 15px #FC354C;
+    -webkit-box-shadow: 0px 0px 2px 3px #FC354C;
+    -moz-box-shadow: 0px 0px 15px #FC354C;
 }
 
 /*Typography*/
 ::selection {
-    background: #FF3D7F;
+    background: #FC354C;
 }
 ::-moz-selection {
-    background: #FF3D7F;
+    background: #FC354C;
+}
+
+a:link {
+    color:#3438F3;
+    line-height: inherit;
+    font-weight: inherit;
+}
+a:visited {
+    color:#7954FF;
+    line-height: inherit;
+    font-weight: inherit;
 }
 
 h1 {
@@ -88,3 +100,4 @@ code {
   color: rgba(0, 0, 0, 0.75);
   padding: 1px 3px;
 
+}

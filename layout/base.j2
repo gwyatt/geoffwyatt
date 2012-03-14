@@ -9,6 +9,7 @@
     </head>
     <body>
         <div class="wrap">
+        <div class="sidebar">   
         <header class="info">
             <h2>Geoff Wyatt</h2>
             {% for menu_item in menu -%}
@@ -17,6 +18,7 @@
             <a href="http://www.linkedin.com/in/geoffwyatt" target="_blank"><img class="social" src="{{ media_url('img/white_linkedin.png') }}" alt="LinkedIn"></a>
             <a href="http://twitter.com/#!/geoffwyatt" target="_blank"><img class="social" src="{{ media_url('img/white_twitter.png') }}" alt="Twitter"></a>
         </header>
+        </div> 
         <div class="content">
             {% filter markdown|typogrify %}
             {% block content %}

@@ -1,0 +1,6 @@
+{% extends "base.j2" %}
+
+{% block content %}
+{% filter markdown|typogrify %}{% block maincontent %}{% endblock maincontent %}{% endfilter %}    
+{% endblock content %}
+{{ super() }}  

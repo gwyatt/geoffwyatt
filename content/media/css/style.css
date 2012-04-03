@@ -26,6 +26,7 @@ div.wrap {
 div.content{
     overflow: auto;
     width: 600px;
+    min-height: 600px;
     height: 100%;
     padding:10px;
     padding-top: 25px;

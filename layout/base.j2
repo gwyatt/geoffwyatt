@@ -20,12 +20,11 @@
         </header>
         </div> 
         <div class="content">
-            {% filter markdown|typogrify %}
             {% block content %}
             {% endblock content %}
-            {% endfilter %}
         </div>
         </div>
         {% include "analytics.j2" %}
      </body>
 </html>
+

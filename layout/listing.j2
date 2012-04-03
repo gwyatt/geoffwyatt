@@ -1,12 +1,14 @@
 {% extends "base.j2" %}
 
 {% block content %}
-<table class="bordered-table zebra-striped">
+<h1>My Thoughts</h1>
+<table>
     <tbody>
     {% for res in site.content.walk_resources_sorted_by_time() %}
     {% if res.meta.listable %}
     <tr>
-        <td><a href="{{ res.full_url }}">{{ res.meta.title|title }}</a> <span style="float:right">{{ res.meta.created.strftime('%d %b %Y') }}</span></td>
+        <td><a href="{{ res.full_url }}">{{ res.meta.title|title }}</a></td>
+        <td><span style="float:right">{{ res.meta.created.strftime('%d %b %Y') }}</span></td>
     </tr>
     {% endif %}     
     {% endfor %}

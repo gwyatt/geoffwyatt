@@ -1,0 +1,26 @@
+---
+title: Python and Virtualenv
+extends: post.j2
+created: !!timestamp '2012-04-10 22:30:00'
+---
+
+{% block maincontent %}
+# Python and Virtualenv
+
+As I go further down my path of becoming a Python guru I continue to run into 
+tools that make my life much easier. Once of these tools is [virtualenv](http://pypi.python.org/pypi/virtualenv). 
+
+To sum it up, virtualenv is a simple way to create virtualized Python 
+environments. One of the problems I found with Python was managing all of the 
+packages I was making use of. Virtualenv gives me the ability to add a package 
+to a specifc project, keeping my global Python environment nice and clean.
+
+## Install and Configure
+
+Installing virtualenv is a breeze. I'm going to assume that you have [pip](http://pypi.python.org/pypi/pip)
+ up and running. To install virtualenv, open up a terminal session and run:
+
+    sudo pip install virtualenv
+    
+That's it! Virtualenv is installed.
+{% endblock maincontent %}

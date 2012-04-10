@@ -29,10 +29,8 @@ div.content{
     min-height: 600px;
     height: 100%;
     padding:10px;
-    padding-top: 25px;
     margin-left: 220px;
     background-color: #fff;
-    border-radius: 10px;
 }
 
 div.sidebar {
@@ -74,7 +72,7 @@ a:link {
     font-weight: inherit;
 }
 a:visited {
-    color:#7954FF;
+    color:#35b0fc;
     line-height: inherit;
     font-weight: inherit;
 }

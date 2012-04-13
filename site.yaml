@@ -19,8 +19,6 @@ context:
         menu:
             - title: Home
               url: /index.html
-            - title: About
-              url: /about.html
             - title: Thoughts
               url: /thoughts.html
 sorter:

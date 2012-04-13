@@ -1,11 +1,16 @@
 
 /* Main Layout Content */
+html{
+    min-height: 100%;
+}
+
 body {
     font-family: 'Nobile', serif;
     font-weight: normal;
     font-size: 18px;
     line-height: 29px;
-
+    height: 100%;
+    min-height: 100%;
 }
 
 div.wrap {
@@ -21,12 +26,12 @@ div.wrap {
     -webkit-box-shadow:0 0px 10px 3px #000000;
     -moz-box-shadow:0 0px 10px 3px #000000;
     box-shadow: 0px 0px 10px 3px #000000;
-
+    min-height: 600px;
 }
+
 div.content{
     overflow: auto;
     width: 600px;
-    min-height: 600px;
     height: 100%;
     padding:10px;
     margin-left: 220px;
@@ -108,8 +113,8 @@ code, pre {
 }
 
 code {
-  background-color: #fee9cc;
-  color: rgba(0, 0, 0, 0.75);
-  padding: 1px 3px;
-
+    color: #5B83EF;
+    background-color: #E7E7E7;
+    padding: 1px 3px;
+    border: 1px solid #CFCFCF;
 }

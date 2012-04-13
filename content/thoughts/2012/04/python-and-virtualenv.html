@@ -1,7 +1,7 @@
 ---
 title: Python and Virtualenv
 extends: post.j2
-created: !!timestamp '2012-04-10 22:30:00'
+created: !!timestamp '2012-04-12 22:30:00'
 ---
 
 {% block maincontent %}
@@ -13,7 +13,7 @@ tools that make my life much easier. Once of these tools is [virtualenv](http://
 To sum it up, virtualenv is a simple way to create virtualized Python 
 environments. One of the problems I found with Python was managing all of the 
 packages I was making use of. Virtualenv gives me the ability to add a package 
-to a specifc project, keeping my global Python environment nice and clean.
+to a specific project, keeping my global Python environment nice and clean.
 
 ## Install and Configure
 
@@ -23,4 +23,41 @@ Installing virtualenv is a breeze. I'm going to assume that you have [pip](http:
     sudo pip install virtualenv
     
 That's it! Virtualenv is installed.
+
+### Configure
+
+To help keep myself organized, I decided to store all of my virtual environments within one folder. I opened up the terminal
+ and created a folder in my home directly:
+
+ 	mkdir ~/virtualenvs
+
+ Next up is to create a new virtual environment for your project. To do this open up your terminal and enter:
+
+ 	virtualenvs ~/virtualenvs/myproject
+
+ This will create a directory 'myproject', and set up all the files needed to manage your virtual environment.
+
+ To activate a virtual environment, simply type:
+
+ 	source ~/virtualenvs/myproject/bin/activate
+
+ When your virtual environment is activated, all new python packages will be installed only to that project. To deactivate 
+ an environment just type <code>deactivate</code> into the terminal.
+
+I keep all of the projects I am working on in a single folder that matches with the name of my v
+
+ That's it, easy and simple python package management.
+
+## Bonus Points - Pip!
+
+ For some extra fun, you can make good use of pip to help capture the packages you are making use of in your virtual environment. This is really helpful if you plan to deploy the same project elsewhere (think moving a local dev environment to a web server). With your virtual environment activated enter the following into your terminal:
+
+ 	pip freeze > requirements.txt
+
+This will produce a text document with all the site packages your environment is using. When you decided to move to production, all you need to do is to transfer your requirements.txt file to the production server, and run the command:
+
+	pip install -r requirements.txt
+
+pip will then go ahead and download all of the packages your application requires. It's a super easy way to make sure you are installing the proper packages for your solution!
+
 {% endblock maincontent %}

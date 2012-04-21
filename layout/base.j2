@@ -6,6 +6,7 @@
         <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
         <title>{{ site_title }} | {% block title %}{{ resource.meta.title }}{% endblock %}</title>
         <meta charset="utf-8" />
+        <meta name="description" content="{{ resource.meta.description }}">
     </head>
     <body>
         <div class="wrap">

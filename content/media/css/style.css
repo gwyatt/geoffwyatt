@@ -47,6 +47,7 @@ div.sidebar {
 }
 
 header.info{
+    padding-top: 10px;
     left: 35px;
     position: fixed;
     text-align:center;

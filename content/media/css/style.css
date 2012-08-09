@@ -16,7 +16,7 @@ body {
 div.wrap {
     margin-left: 10px;
     position: relative;
-    border: 1px solid #000;
+    border: 1px solid #262523;
     width: 930px;
     height: 100%;
     padding-left: 15px;
@@ -43,7 +43,7 @@ div.sidebar {
     position: absolute;
     width: 220px;
     height: 100%;
-    background-color: #000;
+    background-color: #262523;
 }
 
 header.info{

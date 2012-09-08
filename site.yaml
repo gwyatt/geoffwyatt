@@ -17,8 +17,6 @@ context:
         google_analytics_id: UA-28364866-1
         home_url: index.html
         menu:
-            - title: Home
-              url: /index.html
             - title: Thoughts
               url: /thoughts.html
 sorter:

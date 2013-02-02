@@ -15,10 +15,10 @@ context:
             name: Geoff Wyatt
             url: "http://www.geoffwyatt.ca"
         google_analytics_id: UA-28364866-1
-        home_url: index.html
+        home_url: index
         menu:
             - title: Thoughts
-              url: /thoughts.html
+              url: /thoughts
 sorter:
     name:
         attr: name

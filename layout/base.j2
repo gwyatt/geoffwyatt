@@ -1,26 +1,53 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"><!--<![endif]-->
     <head>
-        <link rel="stylesheet" href="{{ media_url('css/style.css') }}" type="text/css"/>
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
+        <meta charset="utf-8">
         <title>{{ site_title }} | {% block title %}{{ resource.meta.title }}{% endblock %}</title>
-        <meta charset="utf-8" />
+        
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="{{ media_url('css/skeleton.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ media_url('css/layout.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ media_url('css/base.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ media_url('css/style.css') }}" type="text/css"/>
+        
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Typography -->
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
+        
+        <!-- Metadata -->
         <meta name="description" content="{{ resource.meta.description }}">
+
     </head>
-    <body> 
-        <div class="wrap">
-        <div class="sidebar">   
-        <header class="info">
-            <a href="/index.html" class="title"><h2>Geoff Wyatt</h2></a>
-            {% for menu_item in menu -%}
-            <p><a class="button" href="{{ menu_item.url }}">{{ menu_item.title }}</a></p>
-            {%- endfor %}
-            <a href="http://www.linkedin.com/in/geoffwyatt" target="_blank"><img class="social" src="{{ media_url('img/white_linkedin.png') }}" alt="LinkedIn"></a>
-            <a href="http://twitter.com/#!/geoffwyatt" target="_blank"><img class="social" src="{{ media_url('img/white_twitter.png') }}" alt="Twitter"></a>
-        </header>
-        </div> 
-        <div class="content">
+    <body>
+    <div class="container">
+        <!-- Nav -->
+        <div class="row">
+        <div class="sixteen columns me">
+            <div ><img src="{{ media_url('img/gw.png') }}"></div>
+        </div>
+        <div class="sixteen columns">
+            <ul class="nav">
+              {% for menu_item in menu -%}
+              <li><a href="{{ menu_item.url }}">{{ menu_item.title }}</a></li>
+              {%- endfor %}
+            </ul>
+        </div>
+        </div>
+        <!-- Content --> 
             {% block content %}
             {% endblock content %}
         </div>

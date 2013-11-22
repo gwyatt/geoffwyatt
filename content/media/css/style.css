@@ -126,6 +126,27 @@ span .alignright {
 
 }
 
+/* Footer */
+
+.footerbreak {
+	width: 100%;
+	height: 1px;
+	background: #F02475;
+	margin: 30px 0;
+}
+
+.footeritem{
+	text-align: center;
+}
+
+.footer a{
+	text-decoration: none;
+}
+
+.footer a:hover{
+	color: #F02475;
+}
+
 /* Global */
 
 ::selection {

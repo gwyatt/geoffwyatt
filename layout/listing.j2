@@ -1,18 +1,18 @@
 {% extends "base.j2" %}
 
 {% block content %}
-<h1>My Thoughts</h1>
-<table>
-    <tbody>
     {% for res in site.content.walk_resources_sorted_by_time() %}
     {% if res.meta.listable %}
-    <tr>
-        <td><a href="{{ res.full_url }}">{{ res.meta.title|title }}</a></td>
-        <td><span style="float:right">{{ res.meta.created.strftime('%d %b %Y') }}</span></td>
-    </tr>
+    <div class="row article">
+    <div class="sixteen columns ">
+            <a href="{{ res.full_url }}"><h3 class="listing-title">{{ res.meta.title }}</h3></a>
+            <span style="float:right"><h4>{{ res.meta.created.strftime('%d %b %Y')  }}</h4></span>
+            <p>{{ res.meta.description }}</p>
+        </div>
+        </div>
     {% endif %}     
     {% endfor %}
-    </tbody>                
-</table>
 {% endblock content %}
 {{ super() }}
+
+

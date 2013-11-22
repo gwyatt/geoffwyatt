@@ -23,7 +23,7 @@
         <![endif]-->
 
         <!-- Typography -->
-        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Cutive+Mono|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
         
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
@@ -36,20 +36,25 @@
     <div class="container">
         <!-- Nav -->
         <div class="row">
-        <div class="sixteen columns me">
-            <div ><img src="{{ media_url('img/gw.png') }}"></div>
+            <div class="sixteen columns me">
+                <div><img src="{{ media_url('img/gw.png') }}"></div>
+            </div>
+            <div class="sixteen columns">
+                <ul class="nav">
+                  {% for menu_item in menu -%}
+                  <li><a href="{{ menu_item.url }}">{{ menu_item.title }}</a></li>
+                  {%- endfor %}
+                </ul>
+            </div>
         </div>
-        <div class="sixteen columns">
-            <ul class="nav">
-              {% for menu_item in menu -%}
-              <li><a href="{{ menu_item.url }}">{{ menu_item.title }}</a></li>
-              {%- endfor %}
-            </ul>
-        </div>
-        </div>
+    </div>
+    <div class="navbreak"></div>
+    <div class="container padtop">
+
         <!-- Content --> 
             {% block content %}
             {% endblock content %}
+        </div>
         </div>
         </div>
         {% include "analytics.j2" %}

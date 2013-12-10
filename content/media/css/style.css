@@ -105,6 +105,10 @@ span .alignright {
 	margin-top: 20px;
 }
 
+.mainarticle p img{
+	display: block;
+	margin: 0 auto;
+}
 .mainarticle a{
 	font-family: 'Roboto Condensed', sans-serif; font-weight:  700;
 	color: #3FB094;
